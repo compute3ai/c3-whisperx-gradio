@@ -43,7 +43,7 @@ RUN mkdir -p /app/whisperx_output && chown appuser:appuser /app/whisperx_output
 COPY --chown=appuser:appuser requirements.txt /app/
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY --chown=appuser:appuser app.py /app/
